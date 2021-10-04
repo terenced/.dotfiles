@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+# Based on https://github.com/ThePrimeagen/.dotfiles/blob/master/install
+
+pushd $DOTFILES
+for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
+do
+    echo "~ Installing :: $folder"
+    stow -D $folder > /dev/null 2>&1
+    stow $folder
+done
+popd

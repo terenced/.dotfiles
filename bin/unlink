@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+# Based on https://github.com/ThePrimeagen/.dotfiles/blob/master/clean-env
+
+pushd $DOTFILES
+for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
+do
+    echo "~ Removing :: $folder"
+    stow -D $folder
+done
+popd
