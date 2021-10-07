@@ -1,4 +1,5 @@
 zsh/.config/zsh/work.zsh
 zsh/.config/zsh/.zcompdump
 zsh/.config/zsh/.zsh_history
+lvim/.config/lvim/plugin/packer_compiled.lua
 .DS_Store
