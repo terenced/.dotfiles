@@ -3,7 +3,7 @@
 -- general
 lvim.format_on_save = true
 lvim.lint_on_save = true
-lvim.colorscheme = "github"
+lvim.colorscheme = "palenight"
 lvim.transparent_window = false
 -- keymappings
 lvim.leader = "space"
