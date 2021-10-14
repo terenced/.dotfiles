@@ -1,10 +1,8 @@
--- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
-
 -- general
 lvim.format_on_save = true
 lvim.lint_on_save = true
-lvim.colorscheme = "palenight"
-lvim.transparent_window = false
+lvim.colorscheme = "tokyonight"
+lvim.transparent_window = true
 -- keymappings
 lvim.leader = "space"
 -- overwrite the key-mappings provided by LunarVim for any mode, or leave it empty to keep them
@@ -45,7 +43,8 @@ lvim.builtin.nvimtree.refresh_wait = 500
 
 lvim.builtin.gitsigns.opts.current_line_blame = true
 -- Use default mode (I like seeing the text of the modde I am in)
-lvim.builtin.lualine.sections.lualine_a = {'mode'}
+-- lvim.builtin.lualine.sections.lualine_a = {'mode'}
+lvim.builtin.lualine.options.theme = 'tokyonight'
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {}
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -107,16 +106,16 @@ lvim.plugins = {
     'frenzyexists/aquarium-vim',
     branch = 'vimscript_version'
   },
-  {'wadackel/vim-dogrun'},
-  {'projekt0n/github-nvim-theme',
-    config = function ()
-      -- https://awesomeopensource.com/project/projekt0n/github-nvim-theme
-      require("github-theme").setup {
-        comment_style = "italic",
-        transparent = lvim.transparent_window
-      }
-    end
-  },
+  -- {'wadackel/vim-dogrun'},
+  -- {'projekt0n/github-nvim-theme',
+  --   config = function ()
+  --     -- https://awesomeopensource.com/project/projekt0n/github-nvim-theme
+  --     require("github-theme").setup {
+  --       comment_style = "italic",
+  --       transparent = lvim.transparent_window
+  --     }
+  --   end
+  -- },
   {
     'glepnir/indent-guides.nvim',
     config = function ()
@@ -132,6 +131,7 @@ lvim.plugins = {
       ]])
     end
   },
+  {'folke/tokyonight.nvim'}
 }
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
@@ -148,6 +148,4 @@ lvim.builtin.which_key.mappings.l["g"] = {
   D = {"<cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration"},
   i = {"<cmd>lua vim.lsp.buf.implementation()<CR>", "Implementation"},
 }
-
-vim.cmd([[source $HOME/.vimrc]])
 
