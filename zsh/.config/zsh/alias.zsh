@@ -46,8 +46,8 @@ fi
 # ZSH
 alias zc="code $ZDOTDIR"
 alias zcv="vim $ZDOTDIR"
-alias zr="RELOAD=1 source $HOME/.zshrc"
-alias allconfigs="code $HOME//.config/"
+alias zr="RELOAD=1 source $HOME/.config/zsh/.zshrc"
+alias allconfigs="code $HOME/.config/"
 
 # Misc
 alias weatherto='curl wttr.in/toronto'

@@ -10,10 +10,12 @@ function install_lunarvim() {
 }
 
 function symlink_zsh() {
+  echo "~ Symlink zsh"
   rm $HOME/.zshrc>/dev/null 2>&1
-  ln -s $HOME/.config/zsh/zshrc  $HOME/.zshrc
+  ln -s $HOME/.config/zsh/.zshrc  $HOME/.zshrc
+
   rm $HOME/.zshenv>/dev/null 2>&1
-  ln -s $HOME/.config/zsh/zshenv  $HOME/.zshenv
+  ln -s $HOME/.config/zsh/.zshenv  $HOME/.zshenv
 }
 
 function init_tpm() {
