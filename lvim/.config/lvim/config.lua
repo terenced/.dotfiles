@@ -148,4 +148,4 @@ lvim.builtin.which_key.mappings.l["g"] = {
   D = {"<cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration"},
   i = {"<cmd>lua vim.lsp.buf.implementation()<CR>", "Implementation"},
 }
-
+vim.cmd([[source $HOME/.vimrc]])
