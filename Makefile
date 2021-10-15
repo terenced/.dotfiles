@@ -18,6 +18,8 @@ stow-macos: brew
 stow-linux: core-linux
 	is-executable stow || apt-get -y install stow
 
+env-setup: link post-install
+
 post-install: link
 	@bash -c "./bin/post-install"	
 

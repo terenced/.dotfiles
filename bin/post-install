@@ -9,15 +9,6 @@ function install_lunarvim() {
   fi
 }
 
-function symlink_zsh() {
-  echo "~ Symlink zsh"
-  rm $HOME/.zshrc>/dev/null 2>&1
-  ln -s $HOME/.config/zsh/.zshrc  $HOME/.zshrc
-
-  rm $HOME/.zshenv>/dev/null 2>&1
-  ln -s $HOME/.config/zsh/.zshenv  $HOME/.zshenv
-}
-
 function init_tpm() {
   TPM_DIR=$HOME/.tmux/plugins/tpm
   if [ ! -d $TPM_DIR ]; then
@@ -31,6 +22,5 @@ function init_tpm() {
   fi
 }
 
-symlink_zsh
-# install_lunarvim
-# init_tpm
+install_lunarvim
+init_tpm
