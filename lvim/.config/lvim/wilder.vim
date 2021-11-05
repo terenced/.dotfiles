@@ -1,5 +1,6 @@
 call wilder#enable_cmdline_enter()
 set wildcharm=<Tab>
+set wildmode=longest:full,full
 cmap <expr> <Tab> wilder#in_context() ? wilder#next() : "\<Tab>"
 cmap <expr> <S-Tab> wilder#in_context() ? wilder#previous() : "\<S-Tab>"
 call wilder#setup({'modes': [':', '/', '?']})

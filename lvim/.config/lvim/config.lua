@@ -1,7 +1,7 @@
 -- general
 lvim.format_on_save = true
 lvim.lint_on_save = true
-lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "dracula"
 lvim.transparent_window = true
 -- keymappings
 lvim.leader = "space"
@@ -36,12 +36,12 @@ lvim.builtin.nvimtree.active = true
 lvim.builtin.nvimtree.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 1
 lvim.builtin.nvimtree.hide_dotfiles = 0
-lvim.builtin.nvimtree.auto_open = 1
+-- lvim.builtin.nvimtree.auto_open = true
 lvim.builtin.nvimtree.highlight_opened_files = 1
-lvim.builtin.nvimtree.auto_resize = 1
+-- lvim.builtin.nvimtree.auto_resize = true
 lvim.builtin.nvimtree.refresh_wait = 500
 
-lvim.builtin.gitsigns.opts.current_line_blame = true
+-- lvim.builtin.gitsigns.opts.current_line_blame = true
 -- Use default mode (I like seeing the text of the modde I am in)
 -- lvim.builtin.lualine.sections.lualine_a = {'mode'}
 lvim.builtin.lualine.options.theme = 'tokyonight'
@@ -50,7 +50,7 @@ lvim.builtin.treesitter.ensure_installed = {}
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.telescope.defaults.path_display = {}
-lvim.builtin.telescope.defaults.layout_config.width = 0.85
+-- lvim.builtin.telescope.defaults.layout_config.width = 0.85
 -- generic LSP settings
 -- you can set a custom on_attach function that will be used for all the language servers
 -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
@@ -103,20 +103,6 @@ lvim.plugins = {
     end
   },
   {
-    'frenzyexists/aquarium-vim',
-    branch = 'vimscript_version'
-  },
-  -- {'wadackel/vim-dogrun'},
-  -- {'projekt0n/github-nvim-theme',
-  --   config = function ()
-  --     -- https://awesomeopensource.com/project/projekt0n/github-nvim-theme
-  --     require("github-theme").setup {
-  --       comment_style = "italic",
-  --       transparent = lvim.transparent_window
-  --     }
-  --   end
-  -- },
-  {
     'glepnir/indent-guides.nvim',
     config = function ()
       require("indent_guides").setup {}
@@ -131,7 +117,37 @@ lvim.plugins = {
       ]])
     end
   },
-  {'folke/tokyonight.nvim'}
+  {'folke/tokyonight.nvim'},
+  {'godlygeek/tabular'},
+  {'rmehri01/onenord.nvim'},
+  {
+    'Pocco81/Catppuccino.nvim',
+    config = function()
+      require("catppuccino").setup {
+        transparency = false,
+        term_colors = true,
+        -- integrations = { which_key = true, telescope = true },
+      }
+    end
+  },
+  {
+    'blackCauldron7/surround.nvim',
+    config = function ()
+      require("surround").setup {
+        context_offset = 100,
+        load_autogroups = false,
+        mappings_style = "sandwich",
+        map_insert_mode = true,
+        quotes = {"'", '"'},
+        brackets = {"(", '{', '['},
+        pairs = {
+          nestable = {{"(", ")"}, {"[", "]"}, {"{", "}"}},
+          linear = {{"'", "'"}, {"`", "`"}, {'"', '"'}}
+        },
+        prefix = "s"
+      }
+    end
+  }
 }
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
@@ -149,3 +165,4 @@ lvim.builtin.which_key.mappings.l["g"] = {
   i = {"<cmd>lua vim.lsp.buf.implementation()<CR>", "Implementation"},
 }
 vim.cmd([[source $HOME/.vimrc]])
+
