@@ -16,16 +16,6 @@ alias gll="git log --pretty='%C(yellow)%h %C(cyan)%ad %Cblue%aN%C(auto)%d %Crese
 
 # vim
 alias vim.="vim ."
-if type nvim > /dev/null; then
-  alias vim=nvim
-  export VISUAL=nvim;
-  export EDITOR=nvim;
-fi
-if type lvim > /dev/null; then
-  alias vim=lvim
-  export VISUAL=lvim;
-  export EDITOR=lvim;
-fi
 
 if type batcat > /dev/null; then
   alias bcat=batcat
@@ -44,8 +34,8 @@ if type docker > /dev/null; then
 fi
 
 # ZSH
-alias zc="code $ZDOTDIR"
-alias zcv="vim $ZDOTDIR"
+alias zc="code $ZCONFIG_DIR"
+alias zcv="vim $ZCONFIG_DIR"
 alias zr="RELOAD=1 source $HOME/.zshrc"
 alias allconfigs="code $HOME/.config/"
 

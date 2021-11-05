@@ -1,1 +1,1 @@
-source "$HOME/.cargo/env"
+source $HOME/.config/zsh/env.zsh
