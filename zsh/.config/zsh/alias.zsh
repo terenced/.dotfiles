@@ -2,7 +2,7 @@
 if type exa > /dev/null; then
   alias ls='exa --classify --group-directories-first'
   alias lx='exa --oneline --classify --all --group-directories-first'
-  alias ll='exa --long --classify --all --group-directories-first'
+  alias ll='exa --classify --all --group-directories-first'
   alias lxt='exa --icons --tree --level'
   alias lxt2='exa --icons --tree --level 2'
 fi
