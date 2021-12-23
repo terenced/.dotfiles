@@ -16,6 +16,7 @@ alias gll="git log --pretty='%C(yellow)%h %C(cyan)%ad %Cblue%aN%C(auto)%d %Crese
 
 # vim
 alias vim.="vim ."
+alias v="vim"
 
 if type batcat > /dev/null; then
   alias bcat=batcat

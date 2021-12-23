@@ -1,7 +1,15 @@
 -- general
+lvim.builtin.dashboard.custom_header = {
+        [[                               __                ]],
+        [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
+        [[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
+        [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
+        [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
+        [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
+    }
 lvim.format_on_save = true
 lvim.lint_on_save = true
-lvim.colorscheme = "dracula"
+lvim.colorscheme = "tokyonight"
 lvim.transparent_window = true
 -- keymappings
 lvim.leader = "space"
@@ -14,6 +22,11 @@ lvim.keys.normal_mode = {
 --   Navigate buffers
   ["<Tab>"] = ":bnext<CR>",
   ["<S-Tab>"] = "bprevious<CR>",
+    -- Better window movement
+  ["<C-Left>"] = "<C-w>h",
+  ["<C-Down>"] = "<C-w>j",
+  ["<C-Up>"] = "<C-w>k",
+  ["<C-Right>"] = "<C-w>l",
 }
 -- if you just want to augment the existing ones then use the utility function
 -- require("utils").add_keymap_insert_mode({ silent = true }, {
@@ -43,17 +56,34 @@ lvim.builtin.nvimtree.refresh_wait = 500
 
 -- lvim.builtin.gitsigns.opts.current_line_blame = true
 -- Use default mode (I like seeing the text of the modde I am in)
--- lvim.builtin.lualine.sections.lualine_a = {'mode'}
+lvim.builtin.lualine.sections.lualine_a = {'mode'}
 lvim.builtin.lualine.options.theme = 'tokyonight'
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {}
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.telescope.defaults.path_display = {}
+lvim.builtin.gitsigns.opts.current_line_blame = true
+
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  {
+    exe = "prettier",
+    filetypes = {
+      "javascriptreact",
+      "javascript",
+      "typescriptreact",
+      "typescript",
+      "json",
+      "markdown",
+    },
+  },
+}
+
 -- lvim.builtin.telescope.defaults.layout_config.width = 0.85
 -- generic LSP settings
 -- you can set a custom on_attach function that will be used for all the language servers
--- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
+-- See <https://github.com/neovim/nvim-Lspconfig#keybindings-and-completion>
 -- lvim.lsp.on_attach_callback = function(client, bufnr)
 --   local function buf_set_option(...)
 --     vim.api.nvim_buf_set_option(bufnr, ...)
@@ -61,6 +91,9 @@ lvim.builtin.telescope.defaults.path_display = {}
 --   --Enable completion triggered by <c-x><c-o>
 --   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 -- end
+
+
+
 local isDeno = require("lspconfig/util").root_pattern("import_map.json")
 if isDeno() then
   lvim.lang.typescript.lsp = {
@@ -121,16 +154,6 @@ lvim.plugins = {
   {'godlygeek/tabular'},
   {'rmehri01/onenord.nvim'},
   {
-    'Pocco81/Catppuccino.nvim',
-    config = function()
-      require("catppuccino").setup {
-        transparency = false,
-        term_colors = true,
-        -- integrations = { which_key = true, telescope = true },
-      }
-    end
-  },
-  {
     'blackCauldron7/surround.nvim',
     config = function ()
       require("surround").setup {
@@ -147,7 +170,12 @@ lvim.plugins = {
         prefix = "s"
       }
     end
-  }
+  },
+  {'srcery-colors/srcery-vim'},
+  {'challenger-deep-theme/vim'},
+  {'wadackel/vim-dogrun'},
+  {'liuchengxu/space-vim-theme'},
+  {'mizlan/iswap.nvim'}
 }
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
@@ -165,4 +193,4 @@ lvim.builtin.which_key.mappings.l["g"] = {
   i = {"<cmd>lua vim.lsp.buf.implementation()<CR>", "Implementation"},
 }
 vim.cmd([[source $HOME/.vimrc]])
-
+vim.o.cursorcolumn = true
