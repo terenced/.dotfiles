@@ -1,15 +1,7 @@
 -- general
-lvim.builtin.dashboard.custom_header = {
-        [[                               __                ]],
-        [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
-        [[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
-        [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
-        [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
-        [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
-    }
 lvim.format_on_save = true
 lvim.lint_on_save = true
-lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "palenight"
 lvim.transparent_window = true
 -- keymappings
 lvim.leader = "space"
@@ -43,7 +35,15 @@ vim.api.nvim_set_keymap("i", "<Tab>", "<Tab><C-g>u", { noremap = true})
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
-lvim.builtin.dashboard.active = true
+lvim.builtin.alpha.dashboard.section.header.val = {
+        [[                               __                ]],
+        [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
+        [[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
+        [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
+        [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
+        [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
+    }
+lvim.builtin.alpha.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.active = true
 lvim.builtin.nvimtree.side = "left"
@@ -57,14 +57,13 @@ lvim.builtin.nvimtree.refresh_wait = 500
 -- lvim.builtin.gitsigns.opts.current_line_blame = true
 -- Use default mode (I like seeing the text of the modde I am in)
 lvim.builtin.lualine.sections.lualine_a = {'mode'}
-lvim.builtin.lualine.options.theme = 'tokyonight'
+-- lvim.builtin.lualine.options.theme = 'tokyonight'
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {}
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.telescope.defaults.path_display = {}
 lvim.builtin.gitsigns.opts.current_line_blame = true
-
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   {
@@ -175,7 +174,11 @@ lvim.plugins = {
   {'challenger-deep-theme/vim'},
   {'wadackel/vim-dogrun'},
   {'liuchengxu/space-vim-theme'},
-  {'mizlan/iswap.nvim'}
+  { "catppuccin/nvim", as = "catppuccin"},
+  {'mizlan/iswap.nvim'},
+  {'hachy/eva01.vim', as = "eva01"},
+  {'elvessousa/sobrio'},
+  {'Rigellute/shades-of-purple.vim'}
 }
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
