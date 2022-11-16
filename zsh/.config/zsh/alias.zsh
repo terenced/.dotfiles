@@ -12,12 +12,14 @@ alias cd..="cd .."
 # git
 alias gko="gco"
 alias gkob="gco -b"
-alias gbclean='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
+alias gbclean='git branch --merged | egrep -v "(^\*|master|main|dev)" | xargs git branch -d'
 alias gll="git log --pretty='%C(yellow)%h %C(cyan)%ad %Cblue%aN%C(auto)%d %Creset%s' --date=relative --date-order --graph"
 
 # vim
 alias vim.="vim ."
 alias v="vim"
+alias c="code"
+alias c.="code ."
 
 if type batcat > /dev/null; then
   alias bcat=batcat
