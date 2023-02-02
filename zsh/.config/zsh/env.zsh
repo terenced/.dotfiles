@@ -6,10 +6,9 @@ if type nvim > /dev/null; then
   export VISUAL=nvim;
   export EDITOR=nvim;
 fi
+
 if type lvim > /dev/null; then
-  alias vim=lvim
-  export VISUAL=lvim;
-  export EDITOR=lvim;
+  alias lv=lvim
 fi
 
 # Node
@@ -17,7 +16,7 @@ export N_DEFAULT=v14
 
 if [[ "$(uname)" = "Darwin" ]] then
   # Define the environment variable ZPLUG_HOME 
-  export ZPLUG_HOME=/usr/local/opt/zplug
+  export ZPLUG_HOME=/opt/homebrew/opt/zplug
 
   # Homebrew
   export PATH=/usr/local/bin:$PATH
@@ -29,8 +28,8 @@ else
   export TERM=screen-256color
 fi
 
-source "$HOME/.cargo/env"
+# source "$HOME/.cargo/env"
 export PATH=~/.local/bin:$PATH
 
-export DENO_INSTALL="/home/terenced/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
+# export DENO_INSTALL="/home/terenced/.deno"
+# export PATH="$DENO_INSTALL/bin:$PATH"
