@@ -34,9 +34,6 @@ core-macos: brew
 brew-packages: brew
 	brew bundle --file=$(DOTFILES)/macos/Brewfile || true
 
-cask-apps: brew
-	brew bundle --file=$(DOTFILES)/macos/Caskfile || true
-
 core-linux:
 	apt-get update
 	apt-get upgrade -y
