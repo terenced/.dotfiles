@@ -43,8 +43,9 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # fnm
+export PATH="/home/terry/.local/share/fnm:$PATH"
+export PATH=/Users/tdellino/.fnm:$PATH
 if type fnm > /dev/null; then
-  export PATH=/Users/tdellino/.fnm:$PATH
   eval "$(fnm env)"
 fi
 

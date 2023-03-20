@@ -11,8 +11,7 @@ if type lvim > /dev/null; then
   alias lv=lvim
 fi
 
-# Node
-export N_DEFAULT=v14
+source "$HOME/.cargo/env"
 
 if [[ "$(uname)" = "Darwin" ]] then
   # Define the environment variable ZPLUG_HOME 
