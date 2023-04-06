@@ -1,0 +1,24 @@
+return {}
+--   {
+--   {
+--     "neovim/nvim-lspconfig",
+--     opts = {
+--       servers = {
+--         ["rust-analyzer"] = {
+--           cargo = {
+--             features = "all",
+--           },
+--           -- Add clippy lints for Rust.
+--           checkOnSave = true,
+--           check = {
+--             command = "clippy",
+--             features = "all",
+--           },
+--           procMacro = {
+--             enable = true,
+--           },
+--         },
+--       },
+--     },
+--   },
+-- }

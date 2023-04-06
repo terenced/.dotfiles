@@ -15,11 +15,13 @@ require("lazy").setup({
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
+    { import = "lazyvim.plugins.extras.coding.copilot" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
   },
   defaults = {
     lazy = true, -- every plugin is lazy-loaded by default
-    version = "*", -- try installing the latest stable version for plugins that support semver
+    -- Conflicts with mason https://stackoverflow.com/questions/75616837/how-to-include-configure-lua-ls-on-lspconfig/75621873#75621873
+    -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
   install = { colorscheme = { "catppuccin-frappe", "tokyonight", "habamax" } },
   checker = { enabled = true }, -- automatically check for plugin updates

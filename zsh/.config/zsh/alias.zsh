@@ -25,6 +25,9 @@ if type batcat > /dev/null; then
   alias bcat=batcat
 fi
 
+# ripgrep
+# TODO: rg --json EXPRESSION PATH | delta
+#
 # Docker
 if type docker > /dev/null; then
   alias din='docker images -f "dangling=true"'

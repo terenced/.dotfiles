@@ -1,0 +1,14 @@
+return {}
+-- return {
+--   {
+--     "nvim-neo-tree/neo-tree.nvim",
+--     opts = function(_, opts)
+--       vim.list_extend(opts, {
+--         -- add tsx and treesitter
+--         window = {
+--           position = "float",
+--         },
+--       })
+--     end,
+--   },
+-- }
