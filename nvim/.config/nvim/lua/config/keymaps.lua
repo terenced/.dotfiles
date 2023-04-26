@@ -15,3 +15,12 @@ vim.keymap.set("i", "<A-up>", "<Esc>:m .-2<CR>==gi", { desc = "Move up" })
 vim.keymap.set("n", "<leader>ghb", "lua require 'gitsigns'.blame_line()", { desc = "Git Blame" })
 vim.keymap.set("n", "<leader>sx", ":Telescope resume<CR>", { desc = "Telescope Resume" })
 vim.keymap.set("n", "<leader>uz", ":ZenMode<CR>", { desc = "Toggle Zen Mode" })
+
+-- Do not copy to clipboard on delete with 'x'
+vim.keymap.set("n", "x", '"_x')
+
+-- Delete a word backwards
+vim.keymap.set("n", "dw", 'vb"_d')
+
+-- Select all
+vim.keymap.set("n", "<C-a>", "gg<S-v>G")

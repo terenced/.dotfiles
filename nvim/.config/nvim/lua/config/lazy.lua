@@ -6,6 +6,13 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+local curpath = vim.loop.cwd()
+local copilot_enabled = true
+if curpath and string.match(curpath, "lever") then
+  copilot_enabled = false
+  vim.fn.printf("You're working. No copilot for you")
+end
+
 require("lazy").setup({
   spec = {
     -- import LazyVim plugins
@@ -15,7 +22,9 @@ require("lazy").setup({
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
-    { import = "lazyvim.plugins.extras.coding.copilot" },
+    { import = "lazyvim.plugins.extras.coding.copilot", enabled = copilot_enabled },
+    { import = "lazyvim.plugins.extras.linting.eslint" },
+    { import = "lazyvim.plugins.extras.formatting.prettier" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
   },
   defaults = {
@@ -23,7 +32,7 @@ require("lazy").setup({
     -- Conflicts with mason https://stackoverflow.com/questions/75616837/how-to-include-configure-lua-ls-on-lspconfig/75621873#75621873
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "catppuccin-frappe", "tokyonight", "habamax" } },
+  install = { colorscheme = { "catppuccin-frappe", "tokyonight-moon", "habamax" } },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {
