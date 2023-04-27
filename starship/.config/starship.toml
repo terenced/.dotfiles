@@ -102,6 +102,8 @@ format = ' [$symbol$branch]($style) '
 
 [hostname]
 ssh_only = true
+ssh_symbol = '⚆ '
+style = 'bold dimmed purple'
 
 [java]
 format = ' [$symbol($version)]($style) '
