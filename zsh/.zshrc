@@ -52,3 +52,7 @@ fi
 
 export fpath=(/usr/local/opt/fnm/share/zsh/site-functions $fpath)
 
+export ATUIN_NOBIND="true"
+eval "$(atuin init zsh)"
+
+bindkey '^r' _atuin_search_widget

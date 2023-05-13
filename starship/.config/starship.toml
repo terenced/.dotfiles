@@ -20,6 +20,8 @@ $aws\
 $time\
 \n$character
 """
+
+
 [fill]
 symbol = ' '
 
@@ -197,6 +199,9 @@ format = ' [$symbol$workspace]($style) '
 
 [time]
 format = ' [$time]($style) '
+disabled = false
+style = "bright-black"
+
 
 [username]
 format = ' [$user]($style) '
