@@ -7,7 +7,7 @@ end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 local curpath = vim.loop.cwd()
-local copilot_enabled = true
+local copilot_enabled = false
 if curpath and string.match(curpath, "lever") then
   copilot_enabled = false
   vim.fn.printf("You're working. No copilot for you")
@@ -25,6 +25,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.coding.copilot", enabled = copilot_enabled },
     { import = "lazyvim.plugins.extras.linting.eslint" },
     { import = "lazyvim.plugins.extras.formatting.prettier" },
+    -- { import = "lazyvim.plugins.extras.dap.core" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
   },
   defaults = {
@@ -50,3 +51,10 @@ require("lazy").setup({
     },
   },
 })
+
+-- override lazyvim root path to current path.
+-- fixes issues in monorepos
+-- https://github.com/LazyVim/LazyVim/issues/704
+require("lazyvim.util").get_root = function()
+  return vim.loop.cwd()
+end

@@ -19,8 +19,7 @@ vim.keymap.set("n", "<leader>uz", ":ZenMode<CR>", { desc = "Toggle Zen Mode" })
 -- Do not copy to clipboard on delete with 'x'
 vim.keymap.set("n", "x", '"_x')
 
--- Delete a word backwards
-vim.keymap.set("n", "dw", 'vb"_d')
+vim.keymap.set("n", "<CR>", "ciw")
 
 -- Select all
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
