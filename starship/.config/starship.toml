@@ -1,3 +1,4 @@
+"$schema" = 'https://starship.rs/config-schema.json'
 # Disable the blank line at the start of the prompt
 add_newline = false
 
@@ -9,6 +10,8 @@ $git_branch\
 $git_status\
 $c\
 $golang\
+$ruby\
+$java\
 $package\
 $nodejs\
 $rust\
@@ -19,7 +22,6 @@ $aws\
 $time\
 \n$character
 """
-
 
 [fill]
 symbol = ' '

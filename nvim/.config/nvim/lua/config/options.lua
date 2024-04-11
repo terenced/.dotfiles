@@ -4,8 +4,8 @@
 
 local opt = vim.opt
 
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- opt.foldmethod = "expr"
+-- opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldlevel = 99
 opt.iskeyword:append("-") -- consider string-string as whole word
 opt.spell = true

@@ -12,7 +12,6 @@ vim.keymap.set("i", "<A-down>", "<Esc>:m .+1<CR>==gi", { desc = "Move down" })
 vim.keymap.set("n", "<A-up>", ":m .-2<CR>==", { desc = "Move up" })
 vim.keymap.set("v", "<A-up>", ":m '<-2<CR>gv=gv", { desc = "Move up" })
 vim.keymap.set("i", "<A-up>", "<Esc>:m .-2<CR>==gi", { desc = "Move up" })
-vim.keymap.set("n", "<leader>ghb", "lua require 'gitsigns'.blame_line()", { desc = "Git Blame" })
 vim.keymap.set("n", "<leader>sx", ":Telescope resume<CR>", { desc = "Telescope Resume" })
 vim.keymap.set("n", "<leader>uz", ":ZenMode<CR>", { desc = "Toggle Zen Mode" })
 

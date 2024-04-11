@@ -13,7 +13,11 @@ alias cd..="cd .."
 alias gko="gco"
 alias gkob="gco -b"
 alias gbclean='git branch --merged | egrep -v "(^\*|master|main|dev)" | xargs git branch -d'
+alias gbclean-hard='git branch | egrep -v "(^\*|master|main|dev)" | xargs git branch -D'
 alias gll="git log --pretty='%C(yellow)%h %C(cyan)%ad %Cblue%aN%C(auto)%d %Creset%s' --date=relative --date-order --graph"
+alias gls="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+alias lg='lazygit'
 
 # vim
 alias vim.="vim ."
@@ -25,6 +29,9 @@ if type batcat > /dev/null; then
   alias bcat=batcat
 fi
 
+if type act > /dev/null; then
+  alias actt="act --container-architecture linux/amd64"
+fi
 # ripgrep
 # TODO: rg --json EXPRESSION PATH | delta
 #
@@ -39,6 +46,11 @@ if type docker > /dev/null; then
   alias dcprbash='docker-compose run --entrypoint bash'
   alias dcpb='docker-compose build'
 fi
+
+if type lazydocker > /dev/null; then
+  alias lzd='lazydocker'
+fi
+
 
 # ZSH
 alias zc="code $ZCONFIG_DIR"
