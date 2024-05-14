@@ -1,14 +1,15 @@
-# ls/exa aliasa
-if type exa > /dev/null; then
-  alias ls='exa --classify --group-directories-first --icons'
-  alias lx='exa --oneline --classify --all --group-directories-first --icons'
-  alias ll='exa --classify --all --group-directories-first --icons'
+# ls/eza aliasa
+if type eza > /dev/null; then
+  alias ls='eza --classify --group-directories-first --icons'
+  alias lx='eza --oneline --classify --all --group-directories-first --icons'
+  alias ll='eza --classify --all --group-directories-first --icons'
   alias lll='ll -1 --icons'
-  alias lxt='exa --icons --tree --level'
-  alias lxt2='exa --icons --tree --level 2'
+  alias lxt='eza --icons --tree --level'
+  alias lxt2='eza --icons --tree --level 2'
 fi
 
 alias cd..="cd .."
+alias cl="clear"
 # git
 alias gko="gco"
 alias gkob="gco -b"
@@ -24,6 +25,9 @@ alias vim.="vim ."
 alias v="vim"
 alias c="code"
 alias c.="code ."
+
+
+alias j="z"
 
 if type batcat > /dev/null; then
   alias bcat=batcat
@@ -68,3 +72,7 @@ fi
 
 # npm
 alias nr='npm run'
+
+alias pn="pnpm"
+alias pnx="pnpm exec"
+

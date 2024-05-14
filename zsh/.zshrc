@@ -9,13 +9,15 @@ source $ZPLUG_HOME/init.zsh
 # From oh-my-zsh
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/python", from:oh-my-zsh
-zplug "plugins/autojump", from:oh-my-zsh
+#zplug "plugins/python", from:oh-my-zsh
+zplug "plugins/zoxide", from:oh-my-zsh
+zplug "plugins/ripgrep", from:oh-my-zsh
 
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-history-substring-search"
+# zplug "catppuccin/zsh-syntax-highlighting", from:github, as:plugin
 
 # Rust
 # source $HOME/.cargo/env
@@ -56,3 +58,31 @@ export ATUIN_NOBIND="true"
 eval "$(atuin init zsh)"
 
 bindkey '^r' _atuin_search_widget
+
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# pnpm
+export PNPM_HOME="/Users/terrydellino/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+#
+export PATH=/usr/local/opt/postgresql@14/bin:$PATH
+eval "$(rbenv init -)"
+
+
+# bun completions
+[ -s "/Users/terrydellino/.bun/_bun" ] && source "/Users/terrydellino/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
