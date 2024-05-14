@@ -6,6 +6,7 @@ return {
     lazy = false,
     opts = {
       flavour = "frappe",
+      transparent_background = true,
     },
   },
 
@@ -33,7 +34,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gleam",
+      colorscheme = "catppuccin",
       -- colorscheme = "tokyonight",
     },
   },
