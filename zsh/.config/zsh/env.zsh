@@ -32,5 +32,11 @@ export FZF_DEFAULT_OPTS=" \
 --color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf \
 --color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284"
 
-# export DENO_INSTALL="/home/terenced/.deno"
-# export PATH="$DENO_INSTALL/bin:$PATH"
+if [ -n "$TMUX" ]; then
+  export TERM="tmux-256color"
+else
+  export TERM="xterm-256color"
+fi
+
+export HISTIGNORE="ls:ll:lll:cd:pwd:exit:cl:clear:history:fg:bg:jobs:gl:gll"
+export XDG_CONFIG_HOME="$HOME/.config"
