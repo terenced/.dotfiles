@@ -1,0 +1,9 @@
+background-opacity = 0.9
+background-blur = true
+cursor-style = block_hollow
+cursor-style-blink = false
+font-family = "SpaceMono Nerd Font Mono"
+macos-titlebar-style = hidden
+theme = "tokyonight_night"
+window-decoration = false
+shell-integration = fish
