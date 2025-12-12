@@ -10,7 +10,7 @@ function M.setup(config)
 	-- config.font = wezterm.font("GeistCode Nerd Font Mono", { weight = "Bold", italic = false })
 
 	config.font = font
-	config.font_size = 12.0
+	config.font_size = 11.0
 	-- config.command_palette_font = font
 	-- config.command_palette_font_size = 12.0
 end
