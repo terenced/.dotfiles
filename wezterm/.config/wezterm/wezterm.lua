@@ -21,4 +21,6 @@ require("window").setup(config)
 
 config.color_scheme = "Catppuccin Mocha"
 
+-- local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
+-- bar.apply_to_config(config)
 return config
