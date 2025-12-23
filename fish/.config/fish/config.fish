@@ -11,10 +11,10 @@ alias "cd.." "cd .."
 alias ij="open -na \"IntelliJ IDEA.app\" --args $argv"
 alias refish="source ~/.config/fish/config.fish"
 
-if test -f work.fish
-    source work.fish
+if test -f $__fish_config_dir/apps.fish
+    source $__fish_config_dir/apps.fish
 end
 
-if test -f apps.fish
-    source apps.fish
+if test -f $__fish_config_dir/work.fish
+    source $__fish_config_dir/work.fish
 end
