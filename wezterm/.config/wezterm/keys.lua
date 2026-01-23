@@ -1,6 +1,6 @@
 local wezterm = require("wezterm") --[[@as Wezterm]]
 local act = wezterm.action
-
+local colorscheme = require("colorscheme")
 local M = {}
 
 local function move_pane(key, direction)
@@ -40,6 +40,13 @@ function M.setup(config)
 		-- Open WezTerm config file quickly
 		{ key = "p", mods = "CMD|SHIFT", action = act.ActivateCommandPalette },
 		{ key = "u", mods = "CMD", action = act.EmitEvent("toggle-opacity") },
+		{
+			key = "U",
+			mods = "CMD",
+			action = wezterm.action_callback(function(window, pane)
+				colorscheme.toggle_colorscheme(window, pane)
+			end),
+		},
 		{ key = "w", mods = "CMD", action = act.CloseCurrentPane({ confirm = true }) },
 
 		{ key = "c", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
@@ -52,11 +59,11 @@ function M.setup(config)
 
 		-- Workspace Picker
 		{ key = "w", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
-		{ key = "l", mods = "LEADER|CTRL", action = wezterm.action.ShowLauncher },
+		-- { key = "l", mods = "LEADER|CTRL", action = wezterm.action.ShowLauncher },
 
 		-- Tab nav
-		{ key = "p", mods = "LEADER", action = act.ActivateTabRelative(-1) },
-		{ key = "n", mods = "LEADER", action = act.ActivateTabRelative(1) },
+		{ key = "`", mods = "LEADER", action = act.ActivateLastTab },
+		{ key = " ", mods = "LEADER", action = act.ActivateTabRelative(1) },
 		{ key = "1", mods = "LEADER", action = act.ActivateTab(0) },
 		{ key = "2", mods = "LEADER", action = act.ActivateTab(1) },
 		{ key = "3", mods = "LEADER", action = act.ActivateTab(2) },
@@ -67,6 +74,7 @@ function M.setup(config)
 		{ key = "8", mods = "LEADER", action = act.ActivateTab(7) },
 		{ key = "9", mods = "LEADER", action = act.ActivateTab(8) },
 		{ key = "b", mods = "LEADER", action = act.RotatePanes("Clockwise") },
+		{ key = "x", mods = "LEADER", action = act.CloseCurrentPane({ confirm = true }) },
 
 		-- Copy mode
 		{
@@ -79,19 +87,22 @@ function M.setup(config)
 		{
 			key = "'",
 			mods = "LEADER",
-			action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+			action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 		},
 		{
 			key = "-",
 			mods = "LEADER",
-			action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+			action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
 		},
 		{
 			key = "z",
 			mods = "LEADER",
-			action = wezterm.action.TogglePaneZoomState,
+			action = act.TogglePaneZoomState,
 		},
-		{ key = "s", mods = "LEADER", action = wezterm.action.QuickSelect },
+		{ key = "s", mods = "LEADER", action = act.QuickSelect },
+		{ key = "f", mods = "LEADER", action = act.Search({ CaseSensitiveString = "" }) },
+
+		move_pane("j", "Down"),
 		move_pane("j", "Down"),
 		move_pane("k", "Up"),
 		move_pane("h", "Left"),
@@ -100,6 +111,7 @@ function M.setup(config)
 		move_pane("UpArrow", "Up"),
 		move_pane("LeftArrow", "Left"),
 		move_pane("RightArrow", "Right"),
+
 		{
 			-- When we push LEADER + R...
 			key = "r",
@@ -127,6 +139,10 @@ function M.setup(config)
 			resize_pane("RightArrow", "Right"),
 			{ key = "Escape", action = "PopKeyTable" },
 		},
+		-- TODO: setup copy mode
+		-- https://github.com/vieitesss/.mac_config/blob/6777809b94fcb5b2b75ac017be03980f1d51e3d6/wezterm/.config/wezterm/keytables.lua#L7
+		-- https://github.com/amimof/dotfiles/blob/4fc2c4c9df83557ac69fc18fb86cfeeb59960d35/wezterm/dot-wezterm.lua#L382
+		-- https://github.com/wezterm/wezterm/issues/5952
 	}
 end
 
