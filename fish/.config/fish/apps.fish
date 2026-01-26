@@ -27,10 +27,15 @@ if type -q nvim
     alias v nvim
 end
 
-if type -q rbenv
-    set -x PATH $HOME/.rbenv/bin $PATH
-    set -x PATH $HOME/.rbenv/shims/ $PATH
-    source (rbenv init - | psub)
+if type -q mise
+    if status is-interactive
+        mise activate fish | source
+    else
+        mise activate fish --shims | source
+    end
+    if not test -f ~/.config/fish/completions/mise.fish
+        mise completion fish >~/.config/fish/completions/mise.fish
+    end
 end
 
 if type -q lazygit
