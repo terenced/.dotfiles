@@ -76,6 +76,9 @@ function M.setup(config)
 		{ key = "b", mods = "LEADER", action = act.RotatePanes("Clockwise") },
 		{ key = "x", mods = "LEADER", action = act.CloseCurrentPane({ confirm = true }) },
 
+		{ key = "{", mods = "SHIFT|ALT", action = act.MoveTabRelative(-1) },
+		{ key = "}", mods = "SHIFT|ALT", action = act.MoveTabRelative(1) },
+
 		-- Copy mode
 		{
 			key = "[",

@@ -1,6 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 # Disable the blank line at the start of the prompt
 add_newline = false
+command_timeout = 550 
 
 format = """
 $username\
@@ -13,8 +14,8 @@ $golang\
 $java\
 $package\
 $nodejs\
-$rust\
 $python\
+$ruby\
 $fill\
 $kubernetes\
 $aws\

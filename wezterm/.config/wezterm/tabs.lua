@@ -53,8 +53,8 @@ function M.setup(config)
 					z = { fg = theme.background, bg = theme.ansi[7] },
 				},
 				tab = {
-					active = { fg = theme.tab_bar.active_tab.fg_color, bg = theme.ansi[6] },
-					inactive = { fg = theme.tab_bar.inactive_tab.fg_color, bg = theme.background },
+					active = { fg = theme.tab_bar.active_tab.fg_color, bg = theme.tab_bar.active_tab.bg_color },
+					inactive = { fg = theme.tab_bar.inactive_tab.fg_color, bg = theme.tab_bar.inactive_tab.bg_color },
 					inactive_hover = {
 						fg = theme.tab_bar.inactive_tab_hover.fg_color,
 						bg = theme.tab_bar.inactive_tab_hover.bg_color,

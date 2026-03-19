@@ -1,5 +1,6 @@
 local wezterm = require("wezterm") --[[@as Wezterm]]
 local CONSTANTS = require("constants")
+local schemes = require("colorscheme")
 local M = {}
 
 ---@param config Config
@@ -18,14 +19,16 @@ function M.setup(config)
 	}
 	-- macOS
 	if wezterm.target_triple == "aarch64-apple-darwin" then
+		config.native_macos_fullscreen_mode = false
 		-- we are running on windows; maybe we emit different
 		-- key assignments here?
-		config.macos_window_background_blur = 20
-		config.native_macos_fullscreen_mode = false
+		if config.window_background_opacity ~= 1 then
+			config.macos_window_background_blur = 20
+		end
 	end
 
 	-- Command Palette
-	local scheme = config.color_schemes[CONSTANTS.color_scheme]
+	local scheme = config.color_schemes[schemes.get_colorscheme()]
 	config.command_palette_bg_color = scheme.background
 	config.command_palette_fg_color = scheme.foreground
 

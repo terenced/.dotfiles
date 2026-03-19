@@ -5,8 +5,8 @@ local M = {}
 -- https://www.statox.fr/posts/2025/12/wezterm_neovim_synced_colorscheme/
 -- https://github.com/statox/dotfiles/blob/98060bd83c124dd396885749ad79b831157c27d7/config/wezterm/colorscheme.lua
 --
-M.light_colorscheme = "Catppuccin Light"
-M.dark_colorscheme = "Catppuccin Dark"
+M.light_colorscheme = "Koda Light"
+M.dark_colorscheme = "Koda Dark"
 M.default_colorscheme_mode = "light"
 M.colorscheme_file_path = "/tmp/colormode"
 
@@ -18,7 +18,7 @@ end
 
 function M.read_colorscheme_file()
 	local file = io.open(M.colorscheme_file_path, "r")
-	content = file:read()
+	local content = file:read()
 	file:close()
 	return content
 end
@@ -46,15 +46,20 @@ end
 
 ---@param config Config
 function M.apply_to_config(config)
-	local dark = wezterm.color.get_builtin_schemes()["Catppuccin Mocha"]
-	dark.background = "#000000"
+	local koda_dark = require("koda_dark")
+	local koda_light = require("koda_light")
 
-	local light = wezterm.color.get_builtin_schemes()["Catppuccin Latte"]
-	light.background = "#faf9f5" -- https://github.com/oskarnurm/koda.nvim/blob/main/lua/koda/palette/light.lua#L4C17-L4C24
+	local cat_dark = wezterm.color.get_builtin_schemes()["Catppuccin Mocha"]
+	cat_dark.background = "#000000"
+
+	local cat_light = wezterm.color.get_builtin_schemes()["Catppuccin Latte"]
+	cat_light.background = "#faf9f5" -- https://github.com/oskarnurm/koda.nvim/blob/main/lua/koda/palette/light.lua#L4C17-L4C24
 
 	config.color_schemes = {
-		["Catppuccin Dark"] = dark,
-		["Catppuccin Light"] = light,
+		["Koda Dark"] = koda_dark,
+		["Koda Light"] = koda_light,
+		["Catppuccin Dark"] = cat_dark,
+		["Catppuccin Light"] = cat_light,
 	}
 	config.color_scheme = M.get_colorscheme()
 end

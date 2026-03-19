@@ -17,3 +17,7 @@ Neovim config using [LazyVim](https://github.com/LazyVim/LazyVim)
 ├── init.lua
 └── stylua.toml
 </pre>
+
+# Remember Me
+
+If an update breaks try deleting `~/.local/share/nvim/` and `$HOME/.cache/nvim/`

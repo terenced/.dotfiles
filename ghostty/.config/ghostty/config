@@ -1,9 +1,12 @@
-background-opacity = 0.9
 background-blur = true
+background-opacity = 1
 cursor-style = block_hollow
-cursor-style-blink = false
+cursor-style-blink = true
 font-family = "SpaceMono Nerd Font Mono"
-macos-titlebar-style = hidden
-theme = "tokyonight_night"
-window-decoration = false
 shell-integration = fish
+theme = "koda-light"
+window-decoration = true
+window-show-tab-bar = auto
+unfocused-split-opacity = 1
+focus-follows-mouse = true
+

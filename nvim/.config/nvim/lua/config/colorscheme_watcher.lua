@@ -71,10 +71,14 @@ end
 
 local function update_colorscheme()
   local theme = read_colorscheme_file()
-  vim.g.colorsDefault = "koda"
-  vim.g.colorsDiff = "koda"
-
-  vim.cmd("colorscheme " .. vim.g.colorsDefault)
+  local status, _ = pcall(function()
+    require("koda")
+  end)
+  if status then
+    vim.g.colorsDefault = "koda"
+    vim.g.colorsDiff = "koda"
+    vim.cmd("colorscheme " .. vim.g.colorsDefault)
+  end
   vim.opt.bg = theme
 
   local lualine = require("lualine")
