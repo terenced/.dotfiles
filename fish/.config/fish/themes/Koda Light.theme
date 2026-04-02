@@ -1,0 +1,30 @@
+# name: 'Koda Light'
+# url: 'https://github.com/everblush/everblush'
+# preferred_background: faf9f5
+
+fish_color_normal 101010
+fish_color_command 3d3d3d
+fish_color_param a200d1
+fish_color_keyword ca0043
+fish_color_quote 407f00
+fish_color_redirection 926200
+fish_color_end 926200
+fish_color_comment 969ba5
+fish_color_error f30052
+fish_color_gray 969ba5
+fish_color_selection --background=ebebeb
+fish_color_search_match --background=ebebeb
+fish_color_option 407f00
+fish_color_operator 926200
+fish_color_escape 007d7d
+fish_color_autosuggestion 969ba5
+fish_color_cancel f30052
+fish_color_cwd 926200
+fish_color_user 3d3d3d
+fish_color_host 3d3d3d
+fish_color_host_remote 407f00
+fish_color_status f30052
+fish_pager_color_progress 969ba5
+fish_pager_color_prefix 926200
+fish_pager_color_completion 101010
+fish_pager_color_description 969ba5

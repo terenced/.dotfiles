@@ -11,6 +11,7 @@ alias "cd.." "cd .."
 alias ij="open -na \"IntelliJ IDEA.app\" --args $argv"
 alias refish="source ~/.config/fish/config.fish"
 alias fgbd="git branch | fzf -m | cut -c 3- | xargs git branch -D"
+alias brewup="brew outdated|sort -r | fzf -m | string join ' ' -- | xargs brew upgrade"
 
 if test -f $__fish_config_dir/apps.fish
     source $__fish_config_dir/apps.fish
@@ -24,8 +25,8 @@ end
 fish_add_path "/Users/terrydellino/.local/bin"
 
 # pnpm
-set -gx PNPM_HOME "/Users/terrydellino/Library/pnpm"
+set -gx PNPM_HOME /Users/terrydellino/Library/pnpm
 if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
