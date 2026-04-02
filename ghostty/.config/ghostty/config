@@ -1,12 +1,22 @@
 background-blur = true
-background-opacity = 1
+background-opacity = 0.8
+copy-on-select = true
 cursor-style = block_hollow
 cursor-style-blink = true
+focus-follows-mouse = true
 font-family = "SpaceMono Nerd Font Mono"
+
+macos-icon = blueprint
+macos-icon-frame = chrome
+macos-option-as-alt = true
+
 shell-integration = fish
+tab-inherit-working-directory = false
 theme = "koda-light"
+unfocused-split-opacity = 1
 window-decoration = true
 window-show-tab-bar = auto
-unfocused-split-opacity = 1
-focus-follows-mouse = true
+window-subtitle = working-directory
+window-theme = ghostty
 
+keybind = super+u=toggle_background_opacity
