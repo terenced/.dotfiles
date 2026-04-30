@@ -1,7 +1,7 @@
 DOTFILES := $(HOME)/dotfiles
 OS := $(shell bin/is-supported bin/is-macos macos linux)
 PATH := $(DOTFILES)/bin:$(PATH)
-STOW_FOLDERS := 'wezterm fish nvim tmux'
+STOW_FOLDERS := 'wezterm ghostty fish nvim tmux'
 
 all: $(OS)
 

@@ -1,6 +1,8 @@
 .DS_Store
 
 fish/.config/fish/work.fish
+fish/.config/fish/functions/pi.fish
+fish/.config/fish/functions/claude.fish
 lvim/.config/lvim/plugin/packer_compiled.lua
 nvim/.config/nvim/lazy-lock.json
 zsh/.config/zsh/.zcompdump

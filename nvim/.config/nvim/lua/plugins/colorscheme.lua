@@ -16,7 +16,6 @@ return {
     "oskarnurm/koda.nvim",
     config = function()
       require("koda").setup({ transparent = true })
-      -- vim.cmd("colorscheme koda")
     end,
   },
   { "Mofiqul/dracula.nvim" },
@@ -24,7 +23,8 @@ return {
   {
     "folke/tokyonight.nvim",
     opts = {
-      transparent = true,
+      transparent = false,
+      style = "storm",
       styles = {
         sidebars = "transparent",
         floats = "transparent",
@@ -32,19 +32,15 @@ return {
       },
     },
   },
-  { "EdenEast/nightfox.nvim" },
-  { "nyoom-engineering/oxocarbon.nvim", name = " oxocarbon" },
-  { "olivercederborg/poimandres.nvim", name = "poimandres" },
   { "craftzdog/solarized-osaka.nvim" },
-  { "fffnite/gleam-theme-nvim" },
 
   -- Configure LazyVim to load colorscheme
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "koda",
+      -- colorscheme = "koda-moss",
       -- colorscheme = "catppuccin-frappe",
-      -- colorscheme = "tokyonight",
+      colorscheme = "tokyonight-storm",
     },
   },
 }

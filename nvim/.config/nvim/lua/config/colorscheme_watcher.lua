@@ -52,11 +52,11 @@ local function do_watch(path, runnable)
   return watch_with_function(path, runnable.on_event, runnable.on_error)
 end
 
-local function read_colorscheme_file()
-  local filepath = "/tmp/colormode"
+local colormode_path = vim.fn.expand("~/.config/colormode")
 
+local function read_colorscheme_file()
   -- Read the first line of the file
-  local content = vim.fn.readfile(filepath, "", 1)[1] or ""
+  local content = vim.fn.readfile(colormode_path, "", 1)[1] or ""
 
   if string.match(content, "light") then
     return "light"
@@ -72,18 +72,18 @@ end
 local function update_colorscheme()
   local theme = read_colorscheme_file()
   local status, _ = pcall(function()
-    require("koda")
+    require("catppuccin")
   end)
   if status then
-    vim.g.colorsDefault = "koda"
-    vim.g.colorsDiff = "koda"
+    vim.g.colorsDefault = "catppuccin"
+    vim.g.colorsDiff = "catppuccin"
     vim.cmd("colorscheme " .. vim.g.colorsDefault)
   end
   vim.opt.bg = theme
 
   local lualine = require("lualine")
   local config = lualine.get_config()
-  config.options.theme = theme == "light" and "catppuccin-latte" or "catppuccin-frappe"
+  config.options.theme = theme == "light" and "catppuccin-latte" or "catppuccin-mocha"
 
   lualine.setup(config)
   vim.api.nvim_echo({ { theme, "Normal" } }, false, {})
@@ -93,7 +93,7 @@ end
 update_colorscheme()
 
 -- Update the colorscheme when wezterm updates the colorscheme file
-do_watch("/tmp/colormode", {
+do_watch(colormode_path, {
   on_event = function()
     -- We wrap update_colorscheme in vim.schedule because the Vimscript function
     -- "readfile" must not be called in a fast event context

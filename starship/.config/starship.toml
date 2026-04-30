@@ -1,6 +1,8 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 # Disable the blank line at the start of the prompt
 add_newline = false
+follow_symlinks = false
+scan_timeout = 100
 command_timeout = 550 
 
 format = """
@@ -21,9 +23,50 @@ $kubernetes\
 $aws\
 \n$character
 """
-
+palette = "catppuccin_mocha"
 [fill]
 symbol = ' '
+
+[directory]
+format = "[ $path ]($style)"
+truncation_length = 4
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"Developer" = "󰲋 "
+"code" = "󰲋 "
+"Others" = " "
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
 
 [aws]
 format = '[$profile(\[$duration\])]($style) '
@@ -79,6 +122,9 @@ format = ' [$symbol($version)]($style) '
 format = ' [$symbol$account(@$domain)(\($region\))]($style) '
 
 [git_branch]
+# symbol = "[](base) "
+# style = "fg:lavender bg:base"
+# format =  "  [$symbol$branch]($style)[](base)"
 format = ' [$symbol$branch]($style) '
 
 [git_status]
@@ -201,7 +247,6 @@ format = ' [$symbol$workspace]($style) '
 format = ' [$time]($style) '
 disabled = false
 style = "bright-black"
-
 
 [username]
 format = ' [$user]($style) '
