@@ -6,6 +6,7 @@ return {
     opts = {
       adapters = {
         "neotest-plenary",
+        "neotest-rspec",
         "neotest-vitest",
       },
     },

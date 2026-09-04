@@ -12,21 +12,14 @@ require("lazy").setup({
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import/override with your plugins
     -- import any extras modules here
-    { import = "lazyvim.plugins.extras.ai.Copilot-chat" },
-    { import = "lazyvim.plugins.extras.ai.copilot" },
-    { import = "lazyvim.plugins.extras.editor.snacks_explorer" },
+    -- { import = "lazyvim.plugins.extras.editor.snacks_explorer" },
     { import = "lazyvim.plugins.extras.editor.snacks_picker" },
     { import = "lazyvim.plugins.extras.formatting.prettier" },
-    { import = "lazyvim.plugins.extras.lang.java" },
     { import = "lazyvim.plugins.extras.lang.json" },
-    { import = "lazyvim.plugins.extras.lang.python" },
     { import = "lazyvim.plugins.extras.lang.ruby" },
     { import = "lazyvim.plugins.extras.lang.typescript" },
-    { import = "lazyvim.plugins.extras.linting.eslint" },
-    { import = "lazyvim.plugins.extras.test.core" },
-
-    -- { import = "lazyvim.plugins.extras.dap.core" },
-    -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
+    -- { import = "lazyvim.plugins.extras.linting.eslint" },
+    -- { import = "lazyvim.plugins.extras.test.core" },
     { import = "plugins" },
   },
   defaults = {
@@ -34,7 +27,7 @@ require("lazy").setup({
     -- Conflicts with mason https://stackoverflow.com/questions/75616837/how-to-include-configure-lua-ls-on-lspconfig/75621873#75621873
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "catppuccin-frappe" } },
+  -- install = { colorscheme = { "koda" } },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {
