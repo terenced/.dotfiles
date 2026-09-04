@@ -1,64 +1,366 @@
-tap "1password/tap"
-tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/services"
-tap "joshmedeski/sesh"
+tap '1password/tap', trusted: true
+tap 'agavra/tap'
+tap 'almonk/ogpk'
+tap 'anomalyco/tap'
+tap 'atlassian/acli', trusted: true
+tap 'charmbracelet/tap'
+tap 'daveschumaker/claude-sounds'
+tap 'go-task/tap'
+tap 'homebrew/bundle'
+tap 'homebrew/services'
+tap 'jesseduffield/lazydocker'
+tap 'joshmedeski/sesh'
+tap 'nikitabobko/tap'
+tap 'oven-sh/bun'
+tap 'peonping/tap', 'https://github.com/PeonPing/homebrew-tap'
+tap 'trashhalo/brews'
+# Run your GitHub Actions locally
+brew 'act'
+# Plugin manager for zsh, inspired by antigen and antibody
+brew 'antidote'
+# Codec library for encoding and decoding AV1 video streams
+brew 'aom'
+# Columnar in-memory analytics layer designed to accelerate big data
+brew 'apache-arrow'
+# Improved shell history for zsh, bash, fish and nushell
+brew 'atuin'
+# Securely store and access AWS credentials in development environments
+brew 'aws-vault'
+# Official Amazon AWS command-line interface
+brew 'awscli'
+# Thin wrapper around the `aws` command-line interface for use with LocalStack
+brew 'awscli-local', link: false
+# Clone of cat(1) with syntax highlighting and Git integration
+brew 'bat'
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew 'btop'
+# Emacs dependency management
+brew 'cask'
+# Dependency manager for Cocoa projects
+brew 'cocoapods'
+# Top-like interface for container metrics
+brew 'ctop'
+# Secure runtime for JavaScript and TypeScript
+brew 'deno'
+# Reference implementation for the Development Containers specification
+brew 'devcontainer'
+# Docker Credential Helper for Amazon ECR
+brew 'docker-credential-helper-ecr'
+# Command-line DNS client
+brew 'dog'
+# Command-line DNS Client for Humans
+brew 'doggo'
+# Perl lib for reading and writing EXIF metadata
+brew 'exiftool'
+# Modern, maintained replacement for ls
+brew 'eza'
+# Simple, fast and user-friendly alternative to find
+brew 'fd'
+# Play, record, convert, and stream select audio and video codecs
+brew 'ffmpeg'
+# Create thumbnails for your video files
+brew 'ffmpegthumbnailer'
+# Banner-like program prints strings as ASCII art
+brew 'figlet'
+# User-friendly command-line shell for UNIX-like operating systems
+brew 'fish'
+# Plugin manager for the Fish shell
+brew 'fisher'
+# Command-line fuzzy finder written in Go
+brew 'fzf'
+# GNU Privacy Guard (OpenPGP)
+brew 'gnupg'
+# Library access to GnuPG
+brew 'gpgme'
+# New file format for still image compression
+brew 'jpeg-xl'
+# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+brew 'libheif'
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew 'poppler'
+# Geospatial Data Abstraction Library
+brew 'gdal'
+# GitHub command-line tool
+brew 'gh'
+# Image processing and image analysis library
+brew 'leptonica'
+# OCR (Optical Character Recognition) engine
+brew 'tesseract'
+# Interpreter for PostScript and PDF
+brew 'ghostscript'
+# Syntax-highlighting pager for git and diff output
+brew 'git-delta'
+# Git extension for versioning large files
+brew 'git-lfs'
+# Prevents you from committing sensitive information to a git repo
+brew 'git-secrets'
+# Audit git repos for secrets
+brew 'gitleaks'
+# Render markdown on the CLI
+brew 'glow'
+# Open source programming language to build simple/reliable/efficient software
+brew 'go'
+# Task is a task runner/build tool that aims to be simpler and easier to use
+brew 'go-task'
+# Tool for glamorous shell scripts
+brew 'gum'
+# Agent multiplexer that lives in your terminal
+brew 'herdr'
+# Review-first terminal diff viewer for agent-authored changesets
+brew 'hunk'
+# Tools and libraries to manipulate images in select formats
+brew 'imagemagick'
+# Feature-rich interactive Jira CLI
+brew 'jira-cli'
+# Command-line pager for JSON data
+brew 'jless'
+# Lightweight and flexible command-line JSON processor
+brew 'jq'
+# Modern load testing tool, using Go and JavaScript
+brew 'k6'
+# Kubernetes CLI To Manage Your Clusters In Style!
+brew 'k9s'
+# Simple terminal UI for git commands
+brew 'lazygit'
+# Conversion library
+brew 'libiconv'
+# Just-In-Time Compiler (JIT) for the Lua programming language
+brew 'luajit'
+# Polyglot runtime manager (asdf rust clone)
+brew 'mise'
+# NCurses Disk Usage
+brew 'ncdu'
+# Fast, highly customisable system info script
+brew 'neofetch'
+# Ambitious Vim-fork focused on extensibility and agility
+brew 'neovim'
+# Port scanning utility for large networks
+brew 'nmap'
+# Modern shell for the GitHub era
+brew 'nushell'
+# Generate clients, server & docs from an OpenAPI spec (v2, v3)
+brew 'openapi-generator'
+# Drop-in replacement for Terraform. Infrastructure as Code Tool
+brew 'opentofu'
+# Terminal multiplexer
+brew 'tmux'
+# Process manager for Procfile-based applications and tmux
+brew 'overmind'
+# CLI for Postgres with auto-completion and syntax highlighting
+brew 'pgcli'
+# Python dependency management tool
+brew 'pipenv'
+# Execute binaries from Python packages in isolated environments
+brew 'pipx'
+# Adds support for geographic objects to PostgreSQL
+brew 'postgis'
+# Object-relational database system
+brew 'postgresql@16', link: true
+# Terminal slideshow tool
+brew 'presenterm'
+# Modern replacement for ps written in Rust
+brew 'procs'
+# Interpreted, interactive, object-oriented programming language
+brew 'python@3.11'
+# Generic machine emulator and virtualizer
+brew 'qemu'
+# Persistent key-value database, with built-in net interface
+brew 'redis'
+# Search tool like grep and The Silver Searcher
+brew 'ripgrep'
+# Install various Ruby versions and implementations
+brew 'ruby-build'
+# Safe, concurrent, practical language
+brew 'rust'
+# Experimental Rust compiler front-end for IDEs
+brew 'rust-analyzer'
+# Static analysis and lint tool, for (ba)sh scripts
+brew 'shellcheck'
+# Cross-shell prompt for astronauts
+brew 'starship'
+# Crypto and x509 Swiss-Army-Knife
+brew 'step'
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew 'stow'
 
-brew "almonk/ogpk/ogpk"
-brew "atuin"
-brew "bat"
-brew "btop"
-brew "cask"
-brew "deno"
-brew "eza"
-brew "fd"
-brew "fnm"
-brew "fzf"
-brew "gh"
-brew "git-delta"
-brew "gum"
-brew "jq"
-brew "luajit"
-brew "neofetch"
-brew "neovim"
-brew "procs"
-brew "ripgrep"
-brew "shellcheck"
-brew "starship"
-brew "step"
-brew "stow"
-brew "tesseract"
-brew "thefuck"
-brew "tldr"
-brew "wget"
-brew "xh"
-brew "yazi"
-brew "yq"
-brew "zf"
-brew "zoxide"
-brew "zplug"
-brew "joshmedeski/sesh/sesh"
-brew "trashhalo/brews/imgcat"
-
-cask "1password-cli"
-cask "docker"
-cask "font-cascadia-code"
-cask "font-cascadia-mono"
-cask "font-caskaydia-cove-nerd-font"
-cask "font-commit-mono-nerd-font"
-cask "font-fantasque-sans-mono"
-cask "font-fira-code-nerd-font"
-cask "font-hack-nerd-font"
-cask "font-hurmit-nerd-font"
-cask "font-inconsolata-nerd-font"
-cask "font-iosevka-nerd-font"
-cask "font-jetbrains-mono-nerd-font"
-cask "font-monaspace-nerd-font"
-cask "font-monocraft"
-cask "font-monofur-nerd-font"
-cask "font-source-code-pro"
-cask "font-space-mono-nerd-font"
-cask "gpg-suite-no-mail"
-cask "obsidian"
-cask "warp"
-cask "wezterm"
+# Programmatically correct mistyped console commands
+brew 'thefuck'
+# Terminal image and video viewer
+brew 'timg'
+# Simplified and community-driven man pages
+brew 'tldr'
+# Tmux session manager. Built on libtmux
+brew 'tmuxp'
+# Network diagnostic tool, inspired by mtr
+brew 'trippy'
+# Extremely fast Python package installer and resolver, written in Rust
+brew 'uv'
+# Image processing library
+brew 'vips'
+# Internet file retriever
+brew 'wget'
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew 'yazi'
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew 'yq'
+# High-performance, asynchronous messaging library
+brew 'zeromq'
+# Command-line fuzzy finder that prioritizes matches on filenames
+brew 'zf'
+# Shell extension to navigate your filesystem faster
+brew 'zoxide'
+# Next-generation plugin manager for zsh
+brew 'zplug'
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew 'zsh-autosuggestions'
+# Terminal UI for Code Reviews - review AI-generated diffs like a GitHub PR
+brew 'agavra/tap/tuicr', trusted: true
+# Sound effects and desktop notifications for AI coding agents
+brew 'peonping/tap/peon-ping', trusted: true
+# Command-line interface for 1Password
+cask '1password-cli'
+# AI code review CLI
+cask 'coderabbit'
+# Browser for SQLite databases
+cask 'db-browser-for-sqlite'
+# App to build and share containerised applications and microservices
+cask 'docker-desktop'
+cask 'font-anonymous-pro'
+cask 'font-b612-mono'
+cask 'font-blex-mono-nerd-font'
+cask 'font-cascadia-code'
+cask 'font-cascadia-mono'
+cask 'font-caskaydia-cove-nerd-font'
+cask 'font-commit-mono-nerd-font'
+cask 'font-departure-mono-nerd-font'
+cask 'font-fantasque-sans-mono'
+cask 'font-fira-code-nerd-font'
+cask 'font-geist-mono-nerd-font'
+cask 'font-hack-nerd-font'
+cask 'font-hasklig'
+cask 'font-hurmit-nerd-font'
+cask 'font-inconsolata-nerd-font'
+cask 'font-iosevka-nerd-font'
+cask 'font-iosevka-term-nerd-font'
+cask 'font-jetbrains-mono-nerd-font'
+cask 'font-liga-comic-mono'
+cask 'font-martian-mono-nerd-font'
+cask 'font-monaspice-nerd-font'
+cask 'font-monocraft'
+cask 'font-monofur-nerd-font'
+cask 'font-monoid-nerd-font'
+cask 'font-source-code-pro'
+cask 'font-space-mono-nerd-font'
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask 'ghostty'
+# Tools to protect your files
+cask 'gpg-suite-no-mail'
+# Speech to text application
+cask 'handy'
+# Utility to hide menu bar items
+cask 'hiddenbar'
+# Open-source keystroke visualiser
+cask 'keycastr'
+# Extensible two-pane file manager
+cask 'marta'
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask 'obsidian'
+# Replacement for Docker Desktop
+cask 'orbstack'
+# Utility to uninstall apps and remove leftover files from old/uninstalled apps
+cask 'pearcleaner'
+# HTTP debugging proxy
+cask 'proxyman'
+# Rust-based terminal
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask 'wezterm'
+vscode 'adamrybak.graycat-sql-formatter'
+vscode 'akamud.vscode-theme-onedark'
+vscode 'alexcvzz.vscode-sqlite'
+vscode 'andrew-codes.mocha-snippets'
+vscode 'annsk.alignment'
+vscode 'anthropic.claude-code'
+vscode 'arcticicestudio.nord-visual-studio-code'
+vscode 'astro-build.astro-vscode'
+vscode 'atomiks.moonlight'
+vscode 'bitbelt.converttoasciiart'
+vscode 'bmalehorn.vscode-fish'
+vscode 'bradlc.vscode-tailwindcss'
+vscode 'catppuccin.catppuccin-vsc'
+vscode 'catppuccin.catppuccin-vsc-icons'
+vscode 'chouzz.vscode-better-align'
+vscode 'codezombiech.gitignore'
+vscode 'davidanson.vscode-markdownlint'
+vscode 'dbaeumer.vscode-eslint'
+vscode 'deinsoftware.vitest-snippets'
+vscode 'docker.docker'
+vscode 'dotcypress.vscode-jane'
+vscode 'dracula-theme.theme-dracula'
+vscode 'drknoxy.eslint-disable-snippets'
+vscode 'dunstontc.viml'
+vscode 'eamodio.gitlens'
+vscode 'editorconfig.editorconfig'
+vscode 'enkia.tokyo-night'
+vscode 'esbenp.prettier-vscode'
+vscode 'euskadi31.json-pretty-printer'
+vscode 'evan-buss.font-switcher'
+vscode 'file-icons.file-icons'
+vscode 'fwcd.kotlin'
+vscode 'github.github-vscode-theme'
+vscode 'github.vscode-github-actions'
+vscode 'github.vscode-pull-request-github'
+vscode 'golang.go'
+vscode 'hasanali.gitignore-templates'
+vscode 'hashicorp.terraform'
+vscode 'henriiik.docker-linter'
+vscode 'hridoy.rails-snippets'
+vscode 'hverlin.mise-vscode'
+vscode 'hwencc.html-tag-wrapper'
+vscode 'mechatroner.rainbow-csv'
+vscode 'miguelsolorio.fluent-icons'
+vscode 'mike-co.import-sorter'
+vscode 'mohd-akram.vscode-html-format'
+vscode 'ms-azuretools.vscode-containers'
+vscode 'ms-azuretools.vscode-docker'
+vscode 'ms-python.black-formatter'
+vscode 'ms-python.debugpy'
+vscode 'ms-python.python'
+vscode 'ms-python.vscode-pylance'
+vscode 'ms-python.vscode-python-envs'
+vscode 'ms-vscode-remote.remote-containers'
+vscode 'ms-vscode-remote.remote-wsl'
+vscode 'ms-vscode.live-server'
+vscode 'ms-vscode.makefile-tools'
+vscode 'ms-vscode.test-adapter-converter'
+vscode 'nanowise.nanowise-dark'
+vscode 'oderwat.indent-rainbow'
+vscode 'orta.vscode-jest'
+vscode 'patricknasralla.tokyo-night-moon'
+vscode 'pflannery.vscode-versionlens'
+vscode 'richie5um2.vscode-sort-json'
+vscode 'rpinski.shebang-snippets'
+vscode 'rubocop.vscode-rubocop'
+vscode 'sergelamikhov.aligntokens'
+vscode 'shakram02.bash-beautify'
+vscode 'shopify.ruby-extensions-pack'
+vscode 'shopify.ruby-lsp'
+vscode 'sorbet.sorbet-vscode-extension'
+vscode 'streetsidesoftware.code-spell-checker'
+vscode 'stylelint.vscode-stylelint'
+vscode 'sumneko.lua'
+vscode 'svelte.svelte-vscode'
+vscode 'talhabalaj.actual-font-changer'
+vscode 'tamasfe.even-better-toml'
+vscode 'tyriar.sort-lines'
+vscode 'vitest.explorer'
+vscode 'vscjava.migrate-java-to-azure'
+vscode 'vscodevim.vim'
+vscode 'wayou.vscode-todo-highlight'
+vscode 'whizkydee.material-palenight-theme'
+vscode 'wmaurer.change-case'
+vscode 'yo1dog.cursor-align'
+vscode 'yoavbls.pretty-ts-errors'
+go 'golang.org/x/tools/gopls'
+go 'honnef.co/go/tools/cmd/staticcheck'
+cargo 'favocon'
+npm 'corepack'
