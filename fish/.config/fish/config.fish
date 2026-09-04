@@ -23,10 +23,3 @@ end
 
 # uv
 fish_add_path "/Users/terrydellino/.local/bin"
-
-# pnpm
-set -gx PNPM_HOME /Users/terrydellino/Library/pnpm
-if not string match -q -- $PNPM_HOME $PATH
-    set -gx PATH "$PNPM_HOME" $PATH
-end
-# pnpm end

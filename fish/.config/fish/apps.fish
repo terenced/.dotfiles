@@ -42,10 +42,20 @@ if type -q lazygit
     alias lg lazygit
 end
 
-if type -q pnpm
-    alias pn pnpm
-    set -gx PNPM_HOME $HOME/Library/pnpm
+if type -q task
+    alias t task
+end
+
+if type -q tldr
+    set -gx TLDR_AUTO_UPDATE_DISABLED 1
+end
+
+if test -x "$HOME/Library/pnpm/pnpm"
     if not string match -q -- $PNPM_HOME $PATH
         set -gx PATH "$PNPM_HOME" $PATH
+        set -gx PNPM_HOME "$HOME/Library/pnpm"
+        fish_add_path "$PNPM_HOME"
+        # fish_add_path "$PNPM_HOME/bin"
+        alias pn pnpm
     end
 end
